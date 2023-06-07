@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.primary-custom-bg{
+  background-color: #FF5722 ;
+}
+.secondary-custom-bg{
+  background-color: #00BCD4;
+}
+.accent-custom-bg{
+  background-color: #607D8B;
+}
+
+.primary-custom-text{
+  color: #FF5722 ;
+}
+.secondary-custom-text{
+  color: #00BCD4;
+}
+.accent-custom-text{
+  color: #607D8B;
+}
