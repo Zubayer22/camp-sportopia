@@ -1,0 +1,56 @@
+[
+    {
+        "image": "https://i.ibb.co/j83p0kD/pexels-football-wife-1618042.jpg",
+        "name": "John Smith",
+        "email": "johnsmith@example.com",
+        "numClassesTaken": 1,
+        "classesTaken": [
+            "All-Star Athletics"
+        ]
+    },
+    {
+        "image": "https://i.ibb.co/TWwJvNp/pexels-craig-adderley-1543924.jpg",
+        "name": "Emily Johnson",
+        "email": "emilyjohnson@example.com",
+        "numClassesTaken": 1,
+        "classesTaken": [
+            "Soccer Superstars"
+        ]
+    },
+    {
+        "image": "https://i.ibb.co/12Ds4Hx/pexels-cottonbro-studio-4100672.jpg",
+        "name": "Michael Davis",
+        "email": "michaeldavis@example.com",
+        "numClassesTaken": 1,
+        "classesTaken": [
+            "Basketball Bonanza"
+        ]
+    },
+    {
+        "image": "https://i.ibb.co/B3150b9/pexels-cottonbro-studio-4098207.jpg",
+        "name": "Sarah Thompson",
+        "email": "sarahthompson@example.com",
+        "numClassesTaken": 1,
+        "classesTaken": [
+            "Swim & Splash Adventures"
+        ]
+    },
+    {
+        "image": "https://i.ibb.co/ZGKqNPF/pexels-cottonbro-studio-7207546.jpg",
+        "name": "David Anderson",
+        "email": "davidanderson@example.com",
+        "numClassesTaken": 1,
+        "classesTaken": [
+            "Outdoor Adventure Quest"
+        ]
+    },
+    {
+        "image": "https://i.ibb.co/d2mHK6c/pexels-julia-larson-6455844.jpg",
+        "name": "Jennifer Lee",
+        "email": "jenniferlee@example.com",
+        "numClassesTaken": 1,
+        "classesTaken": [
+            "Creative Sports Workshops"
+        ]
+    }
+]

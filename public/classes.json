@@ -1,0 +1,44 @@
+[
+    {
+        "image": "https://i.ibb.co/vwtF2jz/pexels-andrea-piacquadio-3764011.jpg",
+        "name": "All-Star Athletics",
+        "instructor": "John Smith",
+        "availableSeats": 20,
+        "price": 150
+    },
+    {
+        "image": "https://i.ibb.co/35xn4F4/pexels-laura-rinco-n-15914785.jpg",
+        "name": "Soccer Superstars",
+        "instructor": "Emily Johnson",
+        "availableSeats": 15,
+        "price": 120
+    },
+    {
+        "image": "https://i.ibb.co/KX19hmD/pexels-img-2116469.jpg",
+        "name": "Basketball Bonanza",
+        "instructor": "Michael Davis",
+        "availableSeats": 12,
+        "price": 110
+    },
+    {
+        "image": "https://i.ibb.co/Qkykbdh/pexels-kindel-media-7294665.jpg",
+        "name": "Swim & Splash Adventures",
+        "instructor": "Sarah Thompson",
+        "availableSeats": 18,
+        "price": 135
+    },
+    {
+        "image": "https://i.ibb.co/cTd3X4W/pexels-maria-camila-castan-o-7406497.jpg",
+        "name": "Outdoor Adventure Quest",
+        "instructor": "David Anderson",
+        "availableSeats": 10,
+        "price": 95
+    },
+    {
+        "image": "https://i.ibb.co/XSv9X6s/pexels-pixabay-301703.jpg",
+        "name": "Creative Sports Workshops",
+        "instructor": "Jennifer Lee",
+        "availableSeats": 25,
+        "price": 180
+    }
+]
