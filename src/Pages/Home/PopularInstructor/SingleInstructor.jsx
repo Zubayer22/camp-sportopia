@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const SingleInstructor = ({instructor}) => {
     const {image, name, email, numClassesTaken, classesTaken} = instructor;
