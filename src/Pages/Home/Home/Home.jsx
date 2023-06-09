@@ -2,6 +2,7 @@ import ParallaxSection from "../ParallaxSection/ParallaxSection";
 import PopularInstructor from "../PopularInstructor/PopularInstructor";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import Slider from "../Slider/Slider";
+import Reviews from "../Reviews/Reviews";
 
 
 const Home = () => {
@@ -9,8 +10,9 @@ const Home = () => {
         <>
             <Slider />
             <PopularClasses />
-            <ParallaxSection/>
+            <ParallaxSection />
             <PopularInstructor />
+            <Reviews />
         </>
     );
 };

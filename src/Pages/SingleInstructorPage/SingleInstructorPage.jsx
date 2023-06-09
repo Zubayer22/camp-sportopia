@@ -26,7 +26,7 @@ const SingleInstructorPage = () => {
                             <p>Name: {seller_name}</p>
                             <p>Email: {seller_email}</p>
                         </div> */}
-                        <button className='mt-10 secondary-custom-bg text-white px-6 py-3 rounded font-bold text-lg'>Add To Cart</button>
+                        <button className='mt-10 secondary-custom-bg text-white px-6 py-3 rounded font-bold text-lg'>Contact With Instructor</button>
                     </div>
                 </div>
             </div>

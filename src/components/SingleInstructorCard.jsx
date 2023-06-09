@@ -7,12 +7,12 @@ const SingleInstructorCard = ({ instructor }) => {
             <figure><img className="w-full h-60" src={image} alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
-                <p>{email}</p>
-                <p>{numClassesTaken}</p>
-                <p>{classesTaken}</p>
-                <div className="card-actions justify-end">
+                <p>Email: <b>{email}</b></p>
+                <p>Total class: {numClassesTaken}</p>
+                {/* <p>{classesTaken}</p> */}
+                <div className="card-actions">
                     <Link to={`/instructors/${_id}`}>
-                        <button className="btn primary-custom-bg text-white hover:bg-transparent hover:border hover:border-black hover:text-black ">Buy Now</button>
+                        <button className="btn primary-custom-bg text-white hover:bg-transparent hover:border hover:border-black hover:text-black ">Learn More</button>
                     </Link>
                 </div>
             </div>

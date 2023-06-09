@@ -8,7 +8,7 @@ const SingleClassPage = () => {
 
     const singleClassDetails = useLoaderData();
     const {  name, image, price, rating, instructor, availableSeats } = singleClassDetails;
-    
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -17,7 +17,7 @@ const SingleClassPage = () => {
     return (
         <div className='container mx-auto py-10'>
             <div className="hero">
-
+        
                 <div className="hero-content flex-col lg:flex-row">
                     <div className='w-md-1/2 w-full'>
                         <img src={image} className="w-full" />

@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const SignUp = () => {
 
     const { createUser, updateUserProfile } = useContext(AuthContext);
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const navigate = useNavigate();
 
     const onSubmit = data => {
@@ -61,6 +61,8 @@ const SignUp = () => {
             })
     };
 
+    const password = watch("password");
+
     return (
         <>
             <div className="container mx-auto my-10">
@@ -108,11 +110,32 @@ const SignUp = () => {
                                 {errors.password?.type === 'maxLength' && <span className="text-red-500">Password must be less than 20 characters</span>}
                                 {errors.password?.type === 'pattern' && <span className="text-red-500">Password must have one special character, capital letter, small letter and number</span>}
                             </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Confirm Password</span>
+                                </label>
+                                <input
+                                    type="password"
+                                    {...register("confirmPassword", {
+                                        required: true,
+                                        validate: (value) => value === password || "Passwords do not match"
+                                    })}
+                                    placeholder="confirm password"
+                                    className="input input-bordered"
+                                />
+                                {errors.confirmPassword && (
+                                    <span className="text-red-500">
+                                        {errors.confirmPassword.message}
+                                    </span>
+                                )}
+                            </div>
+
                             <div className="form-control mt-6">
                                 <input className="btn secondary-custom-bg text-white" type="submit" value="Sign Up" />
                             </div>
                         </form>
-                        <p><small>Already register? <Link className="primary-custom-text" to="/login">Log In</Link> </small></p>
+                        <p className="text-center"><small>Already register? <Link className="primary-custom-text" to="/login">Log In</Link> </small></p>
                         <SocialLogin></SocialLogin>
                     </div>
                 </div>
