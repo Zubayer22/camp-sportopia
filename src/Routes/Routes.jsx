@@ -10,6 +10,8 @@ import SingleInstructorPage from "../Pages/SingleInstructorPage/SingleInstructor
 import Classes from "../Pages/Classes/Classes";
 import Instructors from "../Pages/Instructors/Instructors";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layouts/Dashboard";
+import SelectedClass from "../Pages/Dashboard/SelectedClass";
 
 
 const router = createBrowserRouter([
@@ -49,6 +51,16 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: "dashboard",
+        element: <PrivateRoute><Dashboard /></PrivateRoute>,
+        children: [
+            {
+                path: "selected-class",
+                element: <SelectedClass />
+            }
+        ]
+    }
 ]);
 
 
