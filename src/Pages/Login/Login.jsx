@@ -4,7 +4,12 @@ import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
 
-    const handleLogin = () => {
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
 
     }
 
@@ -34,7 +39,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="secondary-custom-bg text-white px-6 py-3 rounded font-bold text-lg">Login</button>
                         </div>
-                        <p className='text-center pt-5'>Don't have an account? <Link className='primary-custom-text' to='/sign-up'>Sign Up</Link></p>
+                        <p className='text-center pt-5'>Do not have an account? <Link className='primary-custom-text' to='/sign-up'>Sign Up</Link></p>
                         <SocialLogin></SocialLogin>
                     </form>
                 </div>
