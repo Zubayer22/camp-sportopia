@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-
-const SingleInstructor = ({ instructor }) => {
+const SingleInstructorCard = ({ instructor }) => {
     const { _id, image, name, email, numClassesTaken, classesTaken } = instructor;
     return (
         <div className="card card-compact bg-base-100 rounded-none">
@@ -21,4 +20,4 @@ const SingleInstructor = ({ instructor }) => {
     );
 };
 
-export default SingleInstructor;
+export default SingleInstructorCard;

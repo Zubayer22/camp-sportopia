@@ -1,8 +1,9 @@
-import useClass from "../../../hooks/useClass";
-import SingleClassCard from "../../../components/SingleClassCard";
 
+import SingleClassCard from '../../components/SingleClassCard';
+import useClass from '../../hooks/useClass';
 
-const PopularClasses = () => {
+const Classes = () => {
+
     const [classes] = useClass();
 
     return (
@@ -13,8 +14,7 @@ const PopularClasses = () => {
                 }
             </div>
         </div>
-
     );
 };
 
-export default PopularClasses;
+export default Classes;

@@ -1,9 +1,8 @@
-import useInstructor from "../../../hooks/useInstructor";
-import SingleInstructorCard from "../../../components/SingleInstructorCard";
+import SingleInstructorCard from "../../components/SingleInstructorCard";
+import useInstructor from "../../hooks/useInstructor";
 
 
-const PopularInstructor = () => {
-
+const Instructors = () => {
     const [instructor] = useInstructor();
 
     return (
@@ -17,4 +16,4 @@ const PopularInstructor = () => {
     );
 };
 
-export default PopularInstructor;
+export default Instructors;

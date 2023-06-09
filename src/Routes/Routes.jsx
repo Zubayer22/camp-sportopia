@@ -7,6 +7,9 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Login from "../Pages/Login/Login";
 import SingleClassPage from "../Pages/SingleClassPage/SingleClassPage";
 import SingleInstructorPage from "../Pages/SingleInstructorPage/SingleInstructorPage";
+import Classes from "../Pages/Classes/Classes";
+import Instructors from "../Pages/Instructors/Instructors";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -19,13 +22,21 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
+                path: "/classes",
+                element: <Classes />
+            },
+            {
                 path: "/classes/:id",
-                element: <SingleClassPage />,
+                element: <PrivateRoute><SingleClassPage /></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/classes/${params.id}`)
             },
             {
+                path: "/instructors",
+                element: <Instructors />
+            },
+            {
                 path: "/instructors/:id",
-                element: <SingleInstructorPage/>,
+                element: <SingleInstructorPage />,
                 loader: ({ params }) => fetch(`http://localhost:3000/instructors/${params.id}`)
             },
             {

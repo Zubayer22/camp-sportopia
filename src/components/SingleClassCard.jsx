@@ -3,7 +3,7 @@ import { FaStar } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 
 
-const SingleClass = ({ popularClass }) => {
+const SingleClassCard = ({ popularClass }) => {
     const { _id, image, name, instructor, availableSeats, price, rating } = popularClass;
     return (
         <div className="card card-compact bg-base-100 rounded-none">
@@ -30,4 +30,4 @@ const SingleClass = ({ popularClass }) => {
     );
 };
 
-export default SingleClass;
+export default SingleClassCard;
