@@ -18,46 +18,46 @@ const SignUp = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
 
-                updateUserProfile(data.name, data.photoURL)
-                    .then(() => {
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Your profile has been updated successfully',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                    })
-
-                // updateUserProfile(data.name, data.photURL)
+                // updateUserProfile(data.name, data.photoURL)
                 //     .then(() => {
-                //         const saveUser = { name: data.name, email: data.email };
-
-                //         fetch('http://localhost:3000/users', {
-                //             method: 'POST',
-                //             headers: {
-                //                 'content-type': 'application/json'
-                //             },
-                //             body: JSON.stringify(saveUser)
-                //         })
-                //             .then(res => res.json())
-                //             .then(data => {
-                //                 if (data.insertedId) {
-
-                //                     reset();
-                //                     Swal.fire({
-                //                         position: 'top-end',
-                //                         icon: 'success',
-                //                         title: 'Your profile has been updated successfully',
-                //                         showConfirmButton: false,
-                //                         timer: 1500
-                //                     });
-                //                     navigate('/');
-
-                //                 }
-                //             })
+                //         Swal.fire({
+                //             position: 'top-end',
+                //             icon: 'success',
+                //             title: 'Your profile has been updated successfully',
+                //             showConfirmButton: false,
+                //             timer: 1500
+                //         });
                 //     })
-                //     .catch(error => console.log(error));
+
+                updateUserProfile(data.name, data.photURL)
+                    .then(() => {
+                        const saveUser = { name: data.name, email: data.email };
+
+                        fetch('http://localhost:3000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'Your profile has been updated successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/');
+
+                                }
+                            })
+                    })
+                    .catch(error => console.log(error));
             })
     };
 
