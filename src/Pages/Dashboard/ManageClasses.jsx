@@ -1,10 +1,12 @@
 import { FaTrashAlt } from 'react-icons/fa';
 import useClass from '../../hooks/useClass';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const ManageClasses = () => {
 
-    const [classes, refetch] = useClass();
+    const [classes, , refetch] = useClass();
+    const [axiosSecure] = useAxiosSecure();
 
     const handleDelete = item => {
         Swal.fire({
@@ -18,14 +20,10 @@ const ManageClasses = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/classes/${item._id}`, {
-                    method: 'DELETE',
-
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log('deleted res', data);
-                        if (data.deletedCount > 0) {
+                axiosSecure.delete(`/classes/${item._id}`)
+                    .then(res => {
+                        console.log('deleted res', res.data);
+                        if (res.data.deletedCount > 0) {
                             refetch();
                             Swal.fire(
                                 'Deleted!',
@@ -34,7 +32,6 @@ const ManageClasses = () => {
                             )
                         }
                     })
-
             }
         })
     }

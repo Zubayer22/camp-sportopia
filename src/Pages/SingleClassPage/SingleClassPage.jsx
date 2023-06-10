@@ -27,7 +27,7 @@ const SingleClassPage = () => {
                         <h1 className="text-3xl font-bold">{name}</h1>
                         <div className='flex items-center my-5'>
                             <Rating
-                                placeholderRating={rating}
+                                placeholderRating={rating ? rating : '5'}
                                 emptySymbol={<FaStarHalf className='text-[#F4C610]'></FaStarHalf>}
                                 placeholderSymbol={<FaStar className='text-[#F4C610]'></FaStar>}
                                 fullSymbol={<FaStar className='text-[#F4C610]'></FaStar>}

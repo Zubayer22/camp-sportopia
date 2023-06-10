@@ -2,12 +2,14 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import useAdmin from "../../../hooks/useAdmin";
+import useInstructorHook from "../../../hooks/useInstructorHook";
 
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
     const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructorHook();
 
     const handleLogOut = () => {
         logOut()
@@ -19,11 +21,18 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
         <li><Link to="/classes">Classes</Link></li>
-        {user
+        {/* {user
             ?
             <>{isAdmin ? <li><Link to="/dashboard/manage-classes">Dashboard</Link></li> : <li><Link to="/dashboard/selected-class">Dashboard</Link></li>}</>
             :
-            ''}
+            ''} */}
+        {user ? (
+            <>
+                {isAdmin && <li><Link to="/dashboard/manage-classes">Dashboard</Link></li>}
+                {isInstructor && <li><Link to="/dashboard/add-a-class">Dashboard</Link></li>}
+                {!isAdmin && !isInstructor && <li><Link to="/dashboard/selected-class">Dashboard</Link></li>}
+            </>
+        ) : ''}
     </>
     return (
         <div className="secondary-custom-bg">

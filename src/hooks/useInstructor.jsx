@@ -15,9 +15,9 @@ const useInstructor = () => {
     //         })
     // }, [])
 
-    const {data: instructors = [], isLoading: loading, refetch} = useQuery({
+    const { data: instructors = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['instructors'],
-        queryFn: async() => {
+        queryFn: async () => {
             const res = await fetch('http://localhost:3000/instructors');
             return res.json();
         }

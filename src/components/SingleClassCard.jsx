@@ -57,7 +57,7 @@ const SingleClassCard = ({ popularClass }) => {
                 <h2 className="card-title text-2xl">{name}</h2>
                 <div className="absolute right-0 top-0 primary-custom-bg">
                     <Rating
-                        placeholderRating={rating}
+                        placeholderRating={rating ? rating : '5'}
                         emptySymbol={<FaStar className='text-[#b0b0b0]'></FaStar>}
                         placeholderSymbol={<FaStar className='text-[#F4C610]'></FaStar>}
                         fullSymbol={<FaStar className='text-[#F4C610]'></FaStar>}

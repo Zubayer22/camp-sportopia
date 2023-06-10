@@ -52,10 +52,10 @@ const Dashboard = () => {
                     {isInstructor && (
                         <>
                             <li>
-                                <NavLink to="/dashboard/instructor-menu-item-1">Instructor Menu Item 1</NavLink>
+                                <NavLink to="/dashboard/add-a-class">Add a Class</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/instructor-menu-item-2">Instructor Menu Item 2</NavLink>
+                                <NavLink to="/dashboard/my-classes">My Classes</NavLink>
                             </li>
                         </>
                     )}
