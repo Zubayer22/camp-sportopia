@@ -1,5 +1,6 @@
 import { FaTrash, FaUserShield } from 'react-icons/fa';
 import { useQuery } from 'react-query';
+import Swal from 'sweetalert2';
 
 const ManageUsers = () => {
 
@@ -13,23 +14,23 @@ const ManageUsers = () => {
     }
 
     const handleMakeAdmin = user => {
-        // fetch(`http://localhost:3000/users/admin/${user._id}`,{
-        //     method: 'PATCH'
-        // })
-        // .then(res => res.json())
-        // .then(data =>{
-        //     console.log(data);
-        //     if(data.modifiedCount){
-        //         refetch();
-        //         Swal.fire({
-        //             position: 'top-end',
-        //             icon: 'success',
-        //             title: `${user.name} is now admin`,
-        //             showConfirmButton: false,
-        //             timer: 1500
-        //           })
-        //     }
-        // })
+        fetch(`http://localhost:3000/users/admin/${user._id}`,{
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.modifiedCount){
+                refetch();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is now admin`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
     }
 
     return (
