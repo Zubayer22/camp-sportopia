@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
+import useAdmin from "../../../hooks/useAdmin";
 
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const [isAdmin] = useAdmin();
 
     const handleLogOut = () => {
         logOut()
@@ -17,7 +19,11 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
         <li><Link to="/classes">Classes</Link></li>
-        {user ? <li><Link to="/dashboard/selected-class">Dashboard</Link></li> : ''}
+        {user
+            ?
+            <>{isAdmin ? <li><Link to="/dashboard/manage-classes">Dashboard</Link></li> : <li><Link to="/dashboard/selected-class">Dashboard</Link></li>}</>
+            :
+            ''}
     </>
     return (
         <div className="secondary-custom-bg">
@@ -42,9 +48,9 @@ const Navbar = () => {
                     {
                         user ?
                             <div className="flex items-center">
-                                
+
                                 <button className="btn primary-custom-bg text-white hover:bg-transparent hover:border hover:border-[#ffffff] hover:text-[#ffffff]" onClick={handleLogOut}>Log Out</button>
-                               
+
                                 <div className='tooltip tooltip-bottom' data-tip={user?.displayName}>
                                     <img src={user?.photoURL} className={user?.photoURL ? 'rounded-full w-10 ms-3' : ''} alt="" />
                                 </div>
