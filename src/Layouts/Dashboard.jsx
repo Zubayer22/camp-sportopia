@@ -1,12 +1,14 @@
-import { FaEnvelope, FaHamburger, FaHome, FaShoppingCart } from 'react-icons/fa';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { FaHamburger, FaHome, FaShoppingCart } from 'react-icons/fa';
+import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
+import useInstructorHook from '../hooks/useInstructorHook';
 
 const Dashboard = () => {
 
     // const isAdmin = true;
 
     const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructorHook();
 
     return (
         <div className="drawer lg:drawer-open">
@@ -24,7 +26,7 @@ const Dashboard = () => {
                 <ul className="menu p-4 w-80 h-full accent-custom-bg text-white">
                     {/* Sidebar content here */}
 
-                    {isAdmin
+                    {/* {isAdmin
                         ?
                         <>
                             <li><NavLink to="/dashboard/manage-classes">Manage Classes</NavLink></li>
@@ -35,7 +37,39 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/selected-class">My Selected Classes</NavLink></li>
                             <li><NavLink to="/dashboard/enrolled-class">My Enrolled Classes</NavLink></li>
                         </>
-                    }
+                    } */}
+                    {isAdmin && (
+                        <>
+                            <li>
+                                <NavLink to="/dashboard/manage-classes">Manage Classes</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/manage-users">Manage Users</NavLink>
+                            </li>
+                        </>
+                    )}
+
+                    {isInstructor && (
+                        <>
+                            <li>
+                                <NavLink to="/dashboard/instructor-menu-item-1">Instructor Menu Item 1</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/instructor-menu-item-2">Instructor Menu Item 2</NavLink>
+                            </li>
+                        </>
+                    )}
+
+                    {!isAdmin && !isInstructor && (
+                        <>
+                            <li>
+                                <NavLink to="/dashboard/selected-class">My Selected Classes</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/enrolled-class">My Enrolled Classes</NavLink>
+                            </li>
+                        </>
+                    )}
 
 
 
