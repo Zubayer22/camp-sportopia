@@ -45,7 +45,7 @@ const ManageClasses = () => {
                             <th>#</th>
                             <th>Course Name</th>
                             <th>Instructor Name</th>
-                            {/* <th>Instructor Email</th> */}
+                            <th>Instructor Email</th>
                             <th>Available Seats</th>
                             <th>Price</th>
                             <th>Status</th>
@@ -72,6 +72,9 @@ const ManageClasses = () => {
                                 </td>
                                 <td>
                                     {item.instructor}
+                                </td>
+                                <td>
+                                    {item.instructorEmail}
                                 </td>
                                 <td>{item.availableSeats}</td>
                                 <td>${item.price}</td>
