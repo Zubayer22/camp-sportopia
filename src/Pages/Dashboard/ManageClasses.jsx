@@ -143,15 +143,6 @@ const ManageClasses = () => {
                                     </div>
                                 )}
 
-
-                                {/* <div className="dropdown dropdown-left dropdown-hover">
-                                    <label tabIndex={0} className="btn m-1">Pending</label>
-                                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 z-50">
-                                        <li className='btn'>Approve</li>
-                                        <li className='btn'>Deny</li>
-                                    </ul>
-                                </div> */}
-
                                 {/* The button to open modal */}
                                 {/* <a href="#my_modal_8" className="btn">open modal</a> */}
                                 {/* Put this part before </body> tag */}

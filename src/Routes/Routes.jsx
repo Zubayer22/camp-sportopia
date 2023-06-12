@@ -18,6 +18,7 @@ import ManageClasses from "../Pages/Dashboard/ManageClasses";
 import AdminRoute from "./AdminRoute";
 import AddClass from "../Pages/Dashboard/AddClass";
 import MyClasses from "../Pages/Dashboard/MyClasses";
+import Payment from "../Pages/Dashboard/Payment";
 
 
 const router = createBrowserRouter([
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
             {
                 path: "my-classes",
                 element: <MyClasses />
+            },
+            {
+                path: "payment",
+                element: <Payment />
             }
         ]
     }

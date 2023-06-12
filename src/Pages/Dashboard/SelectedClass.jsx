@@ -43,7 +43,6 @@ const SelectedClass = () => {
             <div className="flex justify-evenly h-[60px] items-center">
                 <h2 className="text-3xl font-bold">Total items: {cart.length}</h2>
                 <h2 className="text-3xl font-bold">Total Price: ${total}</h2>
-                <Link to='/dashboard/payment'><button className="btn btn-warning btn-sm">Proceed to checkout</button></Link>
             </div>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
@@ -55,6 +54,7 @@ const SelectedClass = () => {
                             <th>Course Name</th>
                             <th>Price</th>
                             <th>Action</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,6 +78,9 @@ const SelectedClass = () => {
                                 </td>
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-error"><FaTrash></FaTrash></button>
+                                </td>
+                                <td>
+                                    <Link to='/dashboard/payment'><button className="btn btn-warning btn-sm">Proceed to checkout</button></Link>
                                 </td>
                             </tr>)
                         }
