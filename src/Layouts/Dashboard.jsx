@@ -1,4 +1,4 @@
-import { FaHamburger, FaHome, FaShoppingCart } from 'react-icons/fa';
+import { FaCheckSquare, FaColumns, FaHandPointRight, FaHome, FaList, FaUsers } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import useInstructorHook from '../hooks/useInstructorHook';
@@ -41,10 +41,10 @@ const Dashboard = () => {
                     {isAdmin && (
                         <>
                             <li>
-                                <NavLink to="/dashboard/manage-classes">Manage Classes</NavLink>
+                                <NavLink to="/dashboard/manage-classes"><FaColumns></FaColumns> Manage Classes</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/manage-users">Manage Users</NavLink>
+                                <NavLink to="/dashboard/manage-users"><FaUsers></FaUsers> Manage Users</NavLink>
                             </li>
                         </>
                     )}
@@ -52,10 +52,10 @@ const Dashboard = () => {
                     {isInstructor && (
                         <>
                             <li>
-                                <NavLink to="/dashboard/add-a-class">Add a Class</NavLink>
+                                <NavLink to="/dashboard/add-a-class"><FaCheckSquare></FaCheckSquare> Add a Class</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/my-classes">My Classes</NavLink>
+                                <NavLink to="/dashboard/my-classes"><FaList></FaList> My Classes</NavLink>
                             </li>
                         </>
                     )}
@@ -63,10 +63,10 @@ const Dashboard = () => {
                     {!isAdmin && !isInstructor && (
                         <>
                             <li>
-                                <NavLink to="/dashboard/selected-class">My Selected Classes</NavLink>
+                                <NavLink to="/dashboard/selected-class"><FaHandPointRight></FaHandPointRight> My Selected Classes</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/enrolled-class">My Enrolled Classes</NavLink>
+                                <NavLink to="/dashboard/enrolled-class"><FaCheckSquare></FaCheckSquare> My Enrolled Classes</NavLink>
                             </li>
                         </>
                     )}
@@ -77,8 +77,8 @@ const Dashboard = () => {
 
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
-                    <li><NavLink to="/classes"><FaHamburger></FaHamburger>All Classes</NavLink></li>
-                    <li><NavLink to="/instructors"><FaShoppingCart></FaShoppingCart>All Instructors</NavLink></li>
+                    <li><NavLink to="/classes"><FaList></FaList> All Classes</NavLink></li>
+                    <li><NavLink to="/instructors"><FaUsers></FaUsers> All Instructors</NavLink></li>
                 </ul>
 
             </div>

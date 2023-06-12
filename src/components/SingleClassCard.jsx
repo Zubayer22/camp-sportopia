@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
 
 
 const SingleClassCard = ({ popularClass }) => {
@@ -16,7 +17,7 @@ const SingleClassCard = ({ popularClass }) => {
         console.log(item);
         if(user){
             const orderItem = {classItemId: _id, name, image, price, email: user.email}
-            fetch('http://localhost:3000/carts',{
+            fetch('https://camp-sportopia-server.vercel.app/carts',{
                 method: 'POST',
                 headers:{
                     'content-type': 'application/json'
@@ -52,7 +53,7 @@ const SingleClassCard = ({ popularClass }) => {
 
     return (
         <div className="card card-compact secondary-custom-bg text-white rounded-none relative">
-            <figure><img className="w-full h-60" src={image} alt="" /></figure>
+            <figure><motion.div className="w-full h-60" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}><img className="w-full h-60" src={image} alt="" /></motion.div></figure>
             <div className="card-body">
                 <h2 className="card-title text-2xl">{name}</h2>
                 <div className="absolute right-0 top-0 primary-custom-bg">

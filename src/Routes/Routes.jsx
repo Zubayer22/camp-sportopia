@@ -19,12 +19,14 @@ import AdminRoute from "./AdminRoute";
 import AddClass from "../Pages/Dashboard/AddClass";
 import MyClasses from "../Pages/Dashboard/MyClasses";
 import Payment from "../Pages/Dashboard/Payment";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main />,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: "/",
@@ -37,7 +39,7 @@ const router = createBrowserRouter([
             {
                 path: "/classes/:id",
                 element: <PrivateRoute><SingleClassPage /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/classes/${params.id}`)
+                loader: ({ params }) => fetch(`https://camp-sportopia-server.vercel.app/classes/${params.id}`)
             },
             {
                 path: "/instructors",
@@ -46,7 +48,7 @@ const router = createBrowserRouter([
             {
                 path: "/instructors/:id",
                 element: <PrivateRoute><SingleInstructorPage /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/instructors/${params.id}`)
+                loader: ({ params }) => fetch(`https://camp-sportopia-server.vercel.app/instructors/${params.id}`)
             },
             {
                 path: "/signup",

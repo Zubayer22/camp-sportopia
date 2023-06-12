@@ -8,7 +8,7 @@ const ManageUsers = () => {
     const [axiosSecure] = useAxiosSecure();
 
     // const { data: users = [], refetch } = useQuery(['users'], async () => {
-    //     const res = await fetch('http://localhost:3000/users')
+    //     const res = await fetch('https://camp-sportopia-server.vercel.app/users')
     //     return res.json();
     // })
     const { data: users = [], refetch } = useQuery(['users'], async () => {
@@ -21,7 +21,7 @@ const ManageUsers = () => {
     }
 
     // const handleMakeAdmin = user => {
-    //     fetch(`http://localhost:3000/users/admin/${user._id}`, {
+    //     fetch(`https://camp-sportopia-server.vercel.app/users/admin/${user._id}`, {
     //         method: 'PATCH'
     //     })
     //         .then(res => res.json())
