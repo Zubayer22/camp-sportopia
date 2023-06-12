@@ -8,6 +8,8 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
 
+    const [toogle, setToogle] = useState(false);
+
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -70,7 +72,9 @@ const AuthProvider = ({ children }) => {
         signIn,
         googleSignIn,
         updateUserProfile,
-        logOut
+        logOut,
+        toogle,
+        setToogle
     }
     return (
         <AuthContext.Provider value={authInfo}>
